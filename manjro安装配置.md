@@ -91,7 +91,7 @@ $ sudo vim /etc/pacman.conf    # 打开文件
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
-##安装 archlinuxcn 签名钥匙 (导入 GPG key，否则的话 key 验证失败会导致无法安装软件)
+## 安装 archlinuxcn 签名钥匙 (导入 GPG key，否则的话 key 验证失败会导致无法安装软件)
 
 ```
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
@@ -167,10 +167,10 @@ chsh -s /bin/zsh  #更换默认bash，重启后生效
 yay -S --noconfirm wqy-microhei && fc-cache -fv
 ```
 
-##关机卡死
+## 关机卡死
 在/boot/grub/grub.cfg里面找到kernel那一行，在最后面加上nouveau.modeset=0,禁用nouveau。
 
-###安装electron-ssr
+### 安装electron-ssr
 
 ```
 yay -S electron-ssr
@@ -217,7 +217,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 ```
 
-###安装终端显示信息 neofetch或screenfetch
+### 安装终端显示信息 neofetch或screenfetch
 
 ```
 yay -S neofetch
@@ -254,7 +254,7 @@ pyenv install <版本>
 pyenv global <版本>
 ```
 
-###Golang
+### Golang
 安装：
 
 ```
