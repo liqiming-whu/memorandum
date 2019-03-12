@@ -1,0 +1,35 @@
+#hierarchical-attention-model-master-01:
+numpy gensim nltk pandas tensorflow
+
+#text-classification-models-tf-master:
+wget scikit-learn
+
+
+
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+
+WARNING:tensorflow:From /home/venus/workdir/text-classification-models-tf-master/cnn_models/word_cnn.py:31: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+
+WARNING:tensorflow:From /home/venus/workdir/text-classification-models-tf-master/cnn_models/word_cnn.py:36: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+
+WARNING:tensorflow:From /home/venus/workdir/text-classification-models-tf-master/cnn_models/word_cnn.py:43: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+
+WARNING:tensorflow:From /home/venus/workdir/text-classification-models-tf-master/cnn_models/word_cnn.py:46: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/ops/array_grad.py:425: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
