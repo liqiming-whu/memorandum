@@ -1,6 +1,5 @@
 # 安装 manjaro : 基于Archlinux的发行版
 
-```
 下载manjaro.iso镜像，使用rufus以dd模式写入u盘启动
 
 安装遇到的问题：a start job is running for...
@@ -14,7 +13,6 @@ nivida+intel双显卡笔记本--禁用独显
 进入系统后，进入命令行 sudo vi etc/default/grub ，修改：GRUB_CMDLINE_LINUX_DEFAULT="splash quiet"为：GRUB_CMDLINE_LINUX_DEFAULT="splash quiet xdriver=mesa acpi_osi=! acpi_osi='Windows 2009'"
 
 10系显卡：暂无解决办法。
-```
 
 # 安装后配置
 
