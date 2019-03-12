@@ -6,7 +6,7 @@ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent
 
 ## 改名为.vimrc于/root/和/home/venus
 
-```
+```bash
 $ sudo vim /home/venus/.vimrc
 $ sudo cp -i /homr/venus/.vimrc /root/
 $ sudo cp -r /home/venus/.vim/ /root/
