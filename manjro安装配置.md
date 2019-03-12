@@ -177,20 +177,20 @@ yay -S electron-ssr
 ```
 填写并更新ssr订阅，代理模式PAC
 
-###安装chrome
+### 安装chrome
 
 ```
 yay -S google-chrome
 ```
 下载chrome拓展switchyomega,改后缀为tar,解压，用chrome开发模式加载安装，配置socket5,127.0.0.1:1080
 
-###安装vs code
+### 安装vs code
 
 ```
 yay -S visual-studio-code
 ```
 
-###安装jdk
+### 安装jdk
 
 ```
 # 配置环境变量
@@ -202,7 +202,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export  PATH=${JAVA_HOME}/bin:$PATH
 ```
 
-###安装Tim,wechat
+### 安装Tim,wechat
 
 ```
 yay -S deepin.com.qq.office deepin.com.wechat
@@ -223,7 +223,7 @@ export XMODIFIERS="@im=fcitx"
 yay -S neofetch
 ```
 
-###Pyenv
+### Pyenv
 安装：
 
 ```
@@ -269,21 +269,21 @@ export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 ```
 
-###网络工具包
+### 网络工具包
 
 ```
 sudo pacman -S net-tools  # ifconfig
 sudo pacman -S dnsutils  # nslookup
 ```
 
-###美化
+### 美化
 
 ```
 sudo pacman -S papirus-icon-theme  #图标
 sudo pacman -S ttf-dejavu  #字体
 ```
 
-###其他
+### 其他
 
 ```
 yay -S docky  #docky
@@ -299,7 +299,7 @@ yay -S clang
 yay -S electronic-wechat-git #微信
 yay -S -S gdb # 默认没有
 ```
-###WiFi问题
+### WiFi问题
 
 问题1.知道wifi密码，驱动也有，可以点击连接，总是提示"连接断开，您现在处于离线状态"。
 
