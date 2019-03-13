@@ -17,10 +17,10 @@ pip install pycryptodome  # 加密库
 pip install numpy pandas matplotlib scipy
 
 # 机器学习
-pip install scikit-learn tensorflow
+pip install scikit-learn tensorflow  #机器学习框架，深度学习框架
 
 #自然语言处理
-pip install nltk
+pip install nltk genism  # 词向量训练工具
 
 # 数据库
 pip install pymongo  # MongoDB
