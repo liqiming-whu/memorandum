@@ -38,6 +38,7 @@ set noswapfile
 " 保存文件的快捷键
 nmap <leader>w :w!<CR>
 
+
 " 移除 Windows 文件结尾的 `^M`
 noremap <leader>m :%s/<C-V><C-M>//ge<CR>
 
