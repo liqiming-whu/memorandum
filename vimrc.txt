@@ -37,6 +37,7 @@ set noswapfile
 
 " 保存文件的快捷键
 nmap <leader>w :w!<CR>
+nmap <leader>q :q!<CR>
 
 
 
