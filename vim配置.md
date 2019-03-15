@@ -9,6 +9,6 @@ sudo vim /home/venus/.vimrc
 ### 复制.vimrc和.vim/至/root/
 
 ```
-sudo cp -i /homr/venus/.vimrc  /root/
+sudo cp /homr/venus/.vimrc  /root/
 sudo cp -r /home/venus/.vim/  /root/
 ```
