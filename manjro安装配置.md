@@ -78,7 +78,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ```
 sudo cp /home/venus/.vimrc /root/
-//sudo cp - i file dir
 sudo cp - r /home/venus/.vim/ /root/
 ```
 
@@ -301,7 +300,7 @@ yay -S clang
 yay -S electronic-wechat-git #微信
 yay -S -S gdb # 默认没有
 ```
-### WiFi问题
+### WiFi问题（解决方法不一定有效）
 
 问题1.知道wifi密码，驱动也有，可以点击连接，总是提示"连接断开，您现在处于离线状态"。
 
