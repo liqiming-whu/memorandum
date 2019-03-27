@@ -67,6 +67,7 @@ sudo pacdiff
 sudo pacman -S vim
 ```
 把.vimrc 放入/home/venus
+
 下载 vim 插件管理器：
 
 ```
