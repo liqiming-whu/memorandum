@@ -104,8 +104,8 @@ set linebreak
 " 折行后的后续行，使用与第一行相同的缩进
 set breakindent
 
-" 即使在终端，也尽量启用鼠标
-if has("mouse") | set mouse=a | endif
+" 即使在终端，也尽量启用鼠标(设置此项后WSL不能粘贴，所以注释掉了）
+" if has("mouse") | set mouse=a | endif
 
 " 显示输入中的命令，对 gqq/gcc 这种多个字符的命令特别有用
 set showcmd
