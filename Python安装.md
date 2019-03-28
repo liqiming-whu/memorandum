@@ -17,9 +17,9 @@ sudo apt-get --purge remove python3.4
 ```
 
 ## 下载python3.7.3源码：
+[*Download Python*](https://www.python.org/downloads/)
 
 ```bash
-https://www.python.org/downloads/
 wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
 # 或者
 curl -O https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
@@ -99,7 +99,7 @@ sudo pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### 或者
 
-安装pqi (感谢yhangf:<https://github.com/yhangf>)
+安装pqi (感谢[*yhangf*](https://github.com/yhangf))
 
 ```bash
 pip install pqi
