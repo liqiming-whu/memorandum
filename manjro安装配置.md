@@ -1,7 +1,7 @@
 # 安装 manjaro : 基于Archlinux的发行版
 
-下载manjaro.iso镜像，使用rufus以dd模式写入u盘启动
-[rufus](https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4p.exe)
+下载manjaro.iso镜像，推荐使用rufus以dd模式写入u盘启动
+[rufus下载地址](https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4p.exe)
 
 安装遇到的问题：a start job is running for...
 
