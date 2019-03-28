@@ -31,10 +31,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
 " E190: Cannot open "/home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=" for writing
 " E190: Cannot open "/home/venus/.vim/view/~=+NERD_tree_1=" for writing 等等
-" 解决办法 sudo touch /home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=
+" 没有权限。解决办法,不改目录权限：
+" sudo touch /home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=
 " sudo touch /home/venus/.vim/view/~=+NERD_tree_1=
 " sudo chmod 666 /home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=
 " sudo chmod 666 /home/venus/.vim/view/~=+NERD_tree_1= 依次类推
+" 或者更改目录权限： chmod 777 /home/venus/.vim/view/
 
 Plug 'majutsushi/tagbar'  " 代码提纲，F3
 let g:tagbar_width=35
