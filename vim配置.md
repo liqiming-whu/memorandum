@@ -12,6 +12,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 sudo vim /home/venus/.vimrc
 ```
 
+## 安装插件
+
+```bash
+# vim:
+:PlugStatus # 查看插件信息
+:PlugInstall # 安装插件，首先在.vimrc中声明
+:PlugClean # 卸载插件，首先在.vimrc中删除
+```
+
 ## 复制.vimrc和.vim/至/root/
 
 ```bash
