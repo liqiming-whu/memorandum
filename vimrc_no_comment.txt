@@ -1,0 +1,123 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'Yggdroot/indentLine'
+let g:indentLine_noConcealCursor = 1
+let g:indentLine_color_term = 0
+let g:indentLine_char = '|'
+
+Plug 'godlygeek/tabular'
+
+Plug 'scrooloose/nerdtree'
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) &&
+    \ !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+map <F2> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+    \ b:NERDTree.isTabTree()) | q | endif
+
+Plug 'majutsushi/tagbar'
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+let g:tagbar_left = 1
+nmap <F3> :TagbarToggle<CR>
+
+Plug 'hrp/EnhancedCommentify'
+let g:EnhCommentifyRespectIndent = 'Yes'
+let g:EnhCommentifyPretty = 'Yes'
+
+Plug 'justinmk/vim-syntax-extra'
+
+Plug 'hdima/python-syntax'
+let python_highlight_all = 1
+
+Plug 'Raimondi/delimitMate'
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+Plug 'docunext/closetag.vim'
+let g:closetag_html_style=1
+
+Plug 'w0rp/ale'
+
+call plug#end()
+
+let mapleader = ","
+let g:mapleader = ","
+
+set nocompatible
+
+set nobackup
+set nowritebackup
+
+set noswapfile
+
+nmap <leader>w :w!<CR>
+nmap <leader>q :q!<CR>
+
+noremap <leader>m :%s/<C-V><C-M>//ge<CR>
+
+set viewoptions=cursor
+au BufWinLeave ?* mkview
+au VimEnter ?* silent loadview
+
+set fileencodings=utf-8,ucs-bom,gbk,gb2312,big5,latin1
+
+if has("win32")
+    set fileformats=dos,unix,mac
+else
+    set fileformats=unix,mac,dos
+endif
+
+set formatoptions+=mM
+
+set cindent
+
+set smarttab
+set expandtab | set tabstop=4 | set shiftwidth=4
+
+au FileType c,cpp,html,htmldjango,lua,javascript,nsis
+    \ set expandtab | set tabstop=2 | set shiftwidth=2
+
+au FileType make set noexpandtab | set tabstop=8 | set shiftwidth=8
+
+au FileType c,cpp,python,vim set textwidth=80
+set colorcolumn=81
+
+au FileType text,markdown,html,xml set wrap
+set linebreak
+set breakindent
+
+set showcmd
+set scrolloff=7
+set wildmenu
+set wildmode="list:longest"
+set ruler
+set cmdheight=2
+
+set number
+nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
+set lazyredraw
+set hidden
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches() " for performance
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+map <silent> <leader><CR> :nohlsearch<CR>
+
+set gdefault
