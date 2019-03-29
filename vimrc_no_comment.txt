@@ -37,6 +37,8 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'hdima/python-syntax'
 let python_highlight_all = 1
 
+Plug 'nvie/vim-flake8'
+
 Plug 'Raimondi/delimitMate'
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
