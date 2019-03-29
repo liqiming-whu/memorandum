@@ -49,6 +49,9 @@ Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x, <leader>c
 let g:EnhCommentifyRespectIndent = 'Yes'
 let g:EnhCommentifyPretty = 'Yes'
 
+Plug 'luochen1990/rainbow' " 彩虹括号
+let g:rainbow_active = 1
+
 Plug 'justinmk/vim-syntax-extra' " 语法高亮
 
 Plug 'hdima/python-syntax' " python 高亮增强
