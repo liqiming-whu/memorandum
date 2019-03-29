@@ -19,6 +19,7 @@ sudo vim /home/venus/.vimrc
 :PlugStatus # 查看插件信息
 :PlugInstall # 安装插件，首先在.vimrc中声明
 :PlugClean # 卸载插件，首先在.vimrc中删除
+:PlugUpgrade # 升级
 ```
 
 ## 复制.vimrc和.vim/至/root/
