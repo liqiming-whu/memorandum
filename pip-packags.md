@@ -14,7 +14,7 @@ pip install flask  # web 微框架
 pip install pycryptodome  # 加密库
 
 # 代码检测
-
+pip install flake8
 
 # 数据分析
 pip install numpy pandas matplotlib scipy
