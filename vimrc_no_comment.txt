@@ -32,6 +32,9 @@ Plug 'hrp/EnhancedCommentify'
 let g:EnhCommentifyRespectIndent = 'Yes'
 let g:EnhCommentifyPretty = 'Yes'
 
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
 Plug 'justinmk/vim-syntax-extra'
 
 Plug 'hdima/python-syntax'
