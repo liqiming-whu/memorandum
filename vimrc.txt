@@ -54,7 +54,7 @@ Plug 'justinmk/vim-syntax-extra' " 语法高亮
 Plug 'hdima/python-syntax' " python 高亮增强
 let python_highlight_all = 1
 
-Plug 'nvie/vim-flake8' " python静态检查, pip install flake8
+Plug 'nvie/vim-flake8' " python静态检查, pip install flake8, 集群不用
 
 Plug 'Raimondi/delimitMate' " 补全括号
 au FileType python let b:delimitMate_nesting_quotes = ['"']
