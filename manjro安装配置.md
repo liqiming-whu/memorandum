@@ -92,7 +92,7 @@ sudo cp - r /home/venus/.vim/ /root/
 Arch Linux 中文社区仓库是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体/美化包等。
 
 ```bash
-$ sudo vim /etc/pacman.conf    # 打开文件
+sudo vim /etc/pacman.conf    # 打开文件
 # 在文件末尾添加以下两行
 [archlinuxcn]
 //SigLevel = Optional TrustAll
