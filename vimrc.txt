@@ -39,7 +39,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " \ sudo chgrp venus venus /home/venus/.vim/view/
 
 Plug 'majutsushi/tagbar'  " 代码提纲，F3, 集群不可用
-let g:tagbar_width=35
+let g:tagbar_width=30
 let g:tagbar_autofocus=1  " 需要安装ctags，推荐
 " universal-ctags：https://github.com/universal-ctags/ctags
 let g:tagbar_left = 1
