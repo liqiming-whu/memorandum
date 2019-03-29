@@ -118,6 +118,12 @@ pqi add ustc https://mirrors.ustc.edu.cn/pypi/web/simple # 添加新的pip源(�
 pqi remove pypi # 移除pip源（如官方PyPi源）
 ```
 
+### 安装代码审查
+
+```python
+pip install flake8
+```
+
 ### pip安装模块时可能遇到的问题
 
 1、使用命令：sudo pip install some-package时，可能遇到：
