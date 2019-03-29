@@ -45,7 +45,7 @@ let g:tagbar_autofocus=1  " 需要安装ctags，推荐
 let g:tagbar_left = 1
 nmap <F3> :TagbarToggle<CR>
 
-Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x 超算集群vim版本太老，不可用
+Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x, <leader>c, 超算集群不可用
 let g:EnhCommentifyRespectIndent = 'Yes'
 let g:EnhCommentifyPretty = 'Yes'
 
