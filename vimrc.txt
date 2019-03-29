@@ -60,7 +60,7 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签 
 let g:closetag_html_style=1
 
-Plug 'w0rp/ale' " 代码检测 python需要pip install flake8
+Plug 'w0rp/ale' " 代码检测 需要代码检测工具的支持：pip install flake8
 
 call plug#end()
 
