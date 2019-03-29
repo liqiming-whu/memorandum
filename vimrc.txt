@@ -33,21 +33,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
 " E190: Cannot open "/home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=" for writing
 " E190: Cannot open "/home/venus/.vim/view/~=+NERD_tree_1=" for writing 等等
-" 没有权限。解决办法,不改目录权限：
-" sudo touch /home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=
-" sudo touch /home/venus/.vim/view/~=+NERD_tree_1=
-" sudo chmod 666 /home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=
-" sudo chmod 666 /home/venus/.vim/view/~=+NERD_tree_1= 依次类推
-" 或者更改目录权限： chmod 777 /home/venus/.vim/view/
+" 没有权限。解决办法：
+" 更改目录权限： sudo chmod 777 /home/venus/.vim/view/
+" 更改用户和用户组： sudo chown venus /home/venus/.vim/view/
+" \ sudo chgrp venus venus /home/venus/.vim/view/
 
-Plug 'majutsushi/tagbar'  " 代码提纲，F3
+Plug 'majutsushi/tagbar'  " 代码提纲，F3, 集群不可用
 let g:tagbar_width=35
 let g:tagbar_autofocus=1  " 需要安装ctags，推荐
 " universal-ctags：https://github.com/universal-ctags/ctags
 let g:tagbar_left = 1
 nmap <F3> :TagbarToggle<CR>
 
-Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x
+Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x 超算集群vim版本太老，不可用
 let g:EnhCommentifyRespectIndent = 'Yes'
 let g:EnhCommentifyPretty = 'Yes'
 
@@ -59,7 +57,7 @@ let python_highlight_all = 1
 Plug 'Raimondi/delimitMate' " 补全括号
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
-Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签
+Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签 
 let g:closetag_html_style=1
 
 Plug 'w0rp/ale' " 代码检测
