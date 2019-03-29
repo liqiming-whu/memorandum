@@ -1,7 +1,9 @@
 # vim配置
 
-**一键安装并配置**
+**一键安装并配置：**
+
 推荐使用 [**legolas-vim**](https://github.com/TTWShell/legolas-vim) 感谢[*TTWShell*](https://github.com/TTWShell)
+
 或者 [**k-vim**](https://github.com/wklken/k-vim) 感谢[*wklken*](https://github.com/wklken)
 
 ## 使用vim-plug管理vim插件,安装在/home/venus/.vim
