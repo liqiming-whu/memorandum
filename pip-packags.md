@@ -13,6 +13,9 @@ pip install mitmproxy  # 交互式命令行 http 抓包工具
 pip install flask  # web 微框架
 pip install pycryptodome  # 加密库
 
+# 代码检测
+
+
 # 数据分析
 pip install numpy pandas matplotlib scipy
 
