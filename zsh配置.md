@@ -6,7 +6,7 @@
 sudo apt install zsh  # 以ubuntu为例
 ```
 
-或者[通过源码安装]（http://zsh.sourceforge.net/Arc/source.html)
+或者[通过源码安装](<http://zsh.sourceforge.net/Arc/source.html>)
 
 如果没有root权限，通过源码安装，下载解压之后：
 
