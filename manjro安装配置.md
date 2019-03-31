@@ -46,7 +46,7 @@ pacman -Syyu #安装更新
 删除指定软件包，及所有没有被其他已安装软件包使用的依赖关系（s），及配置文件（n），仅供参考：
 
 ```bash
-sudo pacman -Rsn steam-manjaro ms-office-online hplip firefox manjaro-settings-manager-knotifier octopi-notifier-frameworks manjaro-hello manjaro-documentation-en manjaro-browser-settings yakuake konversation thunderbird kget vlc kdeconnect skanlite
+sudo pacman -Rsn steam-manjaro ms-office-online hplip firefox manjaro-settings-manager-knotifier octopi-notifier-frameworks manjaro-hello manjaro-documentation-en manjaro-browser-settings yakuake konversation thunderbird kget vlc-nightly kdeconnect skanlite
 ```
 
 VLC用MPV代替
@@ -95,7 +95,7 @@ Arch Linux 中文社区仓库是由 Arch Linux 中文社区驱动的非官方用
 sudo vim /etc/pacman.conf    # 打开文件
 # 在文件末尾添加以下两行
 [archlinuxcn]
-//SigLevel = Optional TrustAll
+#SigLevel = Optional TrustAll
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
