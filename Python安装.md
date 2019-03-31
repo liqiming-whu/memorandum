@@ -65,13 +65,13 @@ make check # 检查编译是否成功（可选）
 sudo make install
 ```
 
-安装完成后，Python 3.7 安装在了/usr/local文件夹中，可运行文件/usr/local/bin，库文件/usr/local/lib。因为 /usr/local/bin 在 Shell 路径中，所以可以直接在 Shell 中输入如下命令 python3 运行 Python 3.7 解释器
+安装完成后，Python 3.7 安装在了/usr/local/bin文件夹中，可运行文件/usr/local/bin，库文件/usr/local/lib。因为 /usr/local/bin 在 Shell 路径中，所以可以直接在 Shell 中输入如下命令 python3 运行 Python 3.7 解释器
 
 ## 创建软链接，方便使用（可选）
 
 ```bash
-sudo ln -sv /usr/local/python3.7/bin/python3 /usr/bin/python
-sudo ln -sv /usr/local/python3.7/bin/pip3 /usr/bin/pip
+sudo ln -sv /usr/local/bin/python3.7 /usr/bin/python
+sudo ln -sv /usr/local/bin/pip3 /usr/bin/pip
 ```
 
 在 Shell 中输入 python 运行 python 3.7 解释器
