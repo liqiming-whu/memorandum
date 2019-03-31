@@ -1,6 +1,6 @@
 # vim配置
 
-* **一键安装并配置：**
+* **ubuntu一键安装并配置：**
 
 推荐使用 [**legolas-vim**](<https://github.com/TTWShell/legolas-vim>) 感谢[*TTWShell*](<https://github.com/TTWShell>)
 
