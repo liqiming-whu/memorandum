@@ -70,8 +70,8 @@ sudo make install
 ## 创建软链接，方便使用（可选）
 
 ```bash
-ln -sv /usr/local/python3.7/bin/python3 /usr/bin/python3
-ln -sv /usr/local/python3.7/bin/pip3 /usr/bin/pip3
+sudo ln -sv /usr/local/python3.7/bin/python3 /usr/bin/python
+sudo ln -sv /usr/local/python3.7/bin/pip3 /usr/bin/pip
 ```
 
 在 Shell 中输入 python 运行 python 3.7 解释器
