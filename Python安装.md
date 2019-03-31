@@ -59,13 +59,26 @@ gdbm-devel sqlite-devel libffi-devel
 
 ```bash
 cd Python-3.7.3
-sudo ./configure
+sudo ./configure  #--prefix=/usr/local/python(安装目录) --enable-shared CFLAGS=-fPIC
 sudo make
 make check # 检查编译是否成功（可选）
 sudo make install
 ```
 
-安装完成后，Python 3.7 安装在了/usr/local/bin文件夹中，可运行文件/usr/local/bin，库文件/usr/local/lib。因为 /usr/local/bin 在 Shell 路径中，所以可以直接在 Shell 中输入如下命令 python3 运行 Python 3.7 解释器
+这里加上--enable-shared和-fPIC之后可以将python3的动态链接库编译出来，默认情况编译完lib下面只有python3.xm.a这样的文件，python本身可以正常使用，但是如果编译第三方库需要python接口的比如caffe等，则会报错；所以这里建议按照上面的方式配置。
+
+如果不指定安装目录，Python 3.7 默认安装在了/usr/local/bin文件夹中，可运行文件/usr/local/bin，库文件/usr/local/lib。因为 /usr/local/bin 在 Shell 路径中，所以可以直接在 Shell 中输入如下命令 python3 运行 Python 3.7 解释器
+
+## 将python库的路径写到/etc/ld.so.conf配置中
+
+```bash
+cd /etc/ld.so.conf.d
+sudo vim python3.7.conf
+# 添加python库路径，默认为
+/usr/local/lib # 或者/安装目录/lib
+# :wq保存退出
+sudo ldconfig  #启动配置
+```
 
 ## 创建软链接，方便使用（可选）
 
