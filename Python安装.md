@@ -59,7 +59,7 @@ gdbm-devel sqlite-devel libffi-devel
 
 ```bash
 cd Python-3.7.3
-sudo ./configure  #--prefix=/usr/local/python(安装目录) --enable-shared CFLAGS=-fPIC
+sudo ./configure  #--prefix=/usr/local/python3.7(安装目录) --enable-shared CFLAGS=-fPIC
 sudo make
 make check # 检查编译是否成功（可选）
 sudo make install
