@@ -64,6 +64,14 @@ Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签
 let g:closetag_html_style=1
 
 Plug 'w0rp/ale' " 代码检测 需要代码检测工具的支持：pip install flake8
+let &runtimepath.=',~/.vim/plugged/ale'
+let g:ale_sign_column_always = 0 " 一般需要实时检查，默认关闭
+let g:ale_lint_on_save = 1 " save file auto check
+let g:ale_lint_on_text_changed = 0 " for ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0 " for ale_lint_on_save = 1
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 call plug#end()
 
@@ -136,9 +144,8 @@ au FileType c,cpp,html,htmldjango,lua,javascript,nsis
 au FileType make set noexpandtab | set tabstop=8 | set shiftwidth=8
 
 " 对 C/C++/Python/Vim 80列限制
-au FileType c,cpp,python,vim set textwidth=80
+au FileType c,cpp,python,vim set textwidth=80 set colorcolumn=81
 " 设定了宽度限制，画一条竖线以警示
-set colorcolumn=81
 
 " 通常代码不需折行，前面有些语言设置了宽度限制就更不需要了。
 " 实际操作下来，纯文本、Markdown、XML 等比较需要折行，因为它们常常一行太长了
