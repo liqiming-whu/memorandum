@@ -1,6 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+set background=dark
+colorscheme gruvbox
+set t_Co=256
 
 Plug 'vim-airline/vim-airline'
 

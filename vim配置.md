@@ -34,7 +34,6 @@ cp vimrc.txt ~/.vimrc
 ```bash
 cp -r ~/.vim/plugged/gruvbox/colors ~/.vim/
 ```
-
 ## 复制.vimrc和.vim至/root/
 
 ```bash
