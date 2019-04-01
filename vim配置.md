@@ -6,13 +6,13 @@
 
 或者 [**k-vim**](<https://github.com/wklken/k-vim>) 感谢[*wklken*](<https://github.com/wklken>)
 
-## 使用vim-plug管理vim插件,安装在/home/venus/.vim
+## 使用vim-plug管理vim插件,安装在~/.vim
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-## 重命名vimrc.txt为.vimrc于/home/venus/
+## 重命名vimrc.txt为.vimrc于~/
 
 ```bash
 git clone https://github.com/liqiming-whu/memorandum
@@ -30,9 +30,9 @@ cp vimrc.txt ~/.vimrc
 :PlugUpgrade # 升级
 ```
 
-## 复制.vimrc和.vim/至/root/
+## 复制.vimrc和.vim至/root/
 
 ```bash
-sudo cp /home/venus/.vimrc  /root/
-sudo cp -r /home/venus/.vim/  /root/
+sudo cp ~/.vimrc  /root/
+sudo cp -r ~/.vim  /root/
 ```
