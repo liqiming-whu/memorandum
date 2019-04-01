@@ -15,7 +15,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 ## 重命名vimrc.txt为.vimrc于/home/venus/
 
 ```bash
-sudo vim /home/venus/.vimrc
+git clone https://github.com/liqiming-whu/memorandum
+cd memorandum
+cp vimrc.txt ~/.vimrc
 ```
 
 ## 安装插件
