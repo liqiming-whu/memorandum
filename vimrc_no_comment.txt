@@ -105,7 +105,7 @@ au FileType c,cpp,python,vim set textwidth=79 | set colorcolumn=80
 
 au FileType text,markdown,html,xml set wrap
 set linebreak
-set breakindent
+" set breakindent
 
 set showcmd
 set scrolloff=7
