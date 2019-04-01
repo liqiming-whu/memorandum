@@ -46,7 +46,7 @@ Plug 'majutsushi/tagbar'  " 代码提纲，F3, 集群不可用
 let g:tagbar_width=30
 let g:tagbar_autofocus=1  " 需要安装ctags，推荐
 " universal-ctags：https://github.com/universal-ctags/ctags
-let g:tagbar_ = 1
+let g:tagbar_right = 1
 nmap <F3> :TagbarToggle<CR>
 
 Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x, <leader>c
