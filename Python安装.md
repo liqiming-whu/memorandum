@@ -13,7 +13,7 @@ Python 3.6.7
 
 ```bash
 # 卸载Python3.6软件包，并删除配置文件
-sudo apt-get --purge remove python3.4
+sudo apt-get --purge remove python3.6
 ```
 
 ## 下载python3.7.3源码：
