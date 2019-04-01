@@ -31,13 +31,10 @@ cp vimrc.txt ~/.vimrc
 ```
 ## 复制主题配色文件到colors文件夹下
 
-<<<<<<< HEAD
 ```bash
 cp -r ~/.vim/plugged/gruvbox/colors ~/.vim/
 ```
 
-=======
->>>>>>> effa75917336b5538aad6486f1b1b9e6bd2d94a0
 ## 复制.vimrc和.vim至/root/
 
 ```bash
