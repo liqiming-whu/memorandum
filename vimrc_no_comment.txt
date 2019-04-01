@@ -49,16 +49,16 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 Plug 'docunext/closetag.vim'
 let g:closetag_html_style=1
 
-Plug 'w0rp/ale'
-let &runtimepath.=',~/.vim/plugged/ale'
-let g:ale_sign_column_always = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 0
-map <F5> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
-let g:ale_echo_msg_error_str = 'Error'
-let g:ale_echo_msg_warning_str = 'Warning'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" Plug 'w0rp/ale'
+" let &runtimepath.=',~/.vim/plugged/ale'
+" let g:ale_sign_column_always = 0
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_text_changed = 0
+" let g:ale_lint_on_enter = 0
+" map <F5> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
+" let g:ale_echo_msg_error_str = 'Error'
+" let g:ale_echo_msg_warning_str = 'Warning'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 call plug#end()
 
