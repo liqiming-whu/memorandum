@@ -159,7 +159,7 @@ au FileType text,markdown,html,xml set wrap
 " 折行时，以单词为界，以免切断单词
 set linebreak
 " 折行后的后续行，使用与第一行相同的缩进
-set breakindent
+set breakindent  " 集群不可用
 
 " 即使在终端，也尽量启用鼠标(设置此项后WSL不能右键粘贴，所以注释掉了）
 " if has("mouse") | set mouse=a | endif
