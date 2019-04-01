@@ -110,7 +110,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 更换root的pip源
 
 ```bash
-sudo -
+sudo -i
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
