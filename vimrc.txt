@@ -19,7 +19,7 @@ Plug 'godlygeek/tabular' " 代码对齐：选中要对齐的行，执行 :Tab/:
 Plug 'scrooloose/nerdtree' " 文件管理器 F2
 " NERDTree config
 " open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -32,7 +32,7 @@ map <F2> :NERDTreeToggle<CR>
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
     \ b:NERDTree.isTabTree()) | q | endif
-" 上面我们设置了自动打开NERDTree，直接输入vim会打开NERDTree，打开一个目录也
+" 上面我们设置了自动打开NERDTree，(直接输入vim会打开NERDTree)，打开一个目录也
 " 会打开NERDTree，当文件都关闭只有NERDTree时自动退出。
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
 " E190: Cannot open "/home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=" for writing
