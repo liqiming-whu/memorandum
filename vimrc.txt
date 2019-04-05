@@ -82,6 +82,13 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 call plug#end()
 
+filetype plugin indent on
+syntax enable
+syntax on
+
+" When vimrc is edited, reload it
+autocmd! BufWritePost ~/.vimrc source ~/.vimrc
+
 " 首先设置 mapleader，后面键盘映射随时要用
 " 基本上所有自定义的快捷键都以这个字符打头，比如映射`,w`为`:w`
 let mapleader = ","
@@ -186,6 +193,9 @@ set hidden
 " 输入模式下，退格键可以退一切字符
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+set cursorline  " 光标横线
+set cursorcolumn  " 光标竖线
 
 " 高亮不想要的空格，比如行尾
 " See [http://vim.wikia.com/wiki/Highlight_unwanted_spaces]
