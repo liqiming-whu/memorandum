@@ -40,7 +40,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " 没有权限。解决办法：
 " 更改目录权限： sudo chmod 777 /home/venus/.vim/view/
 " 更改用户和用户组： sudo chown venus /home/venus/.vim/view/
-" \ sudo chgrp venus venus /home/venus/.vim/view/
+" \ sudo chgrp venus /home/venus/.vim/view/
 
 Plug 'majutsushi/tagbar'  " 代码提纲，F3, 集群不可用
 let g:tagbar_width=30
