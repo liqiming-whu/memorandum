@@ -9,7 +9,7 @@ python3 -V
 Python 3.6.7
 ```
 
-卸载旧的python版本：
+卸载旧的python版本（预装的python是不能卸载的）：
 
 ```bash
 # 卸载Python3.6软件包，并删除配置文件
