@@ -18,19 +18,19 @@ sudo apt-get --purge remove python3.6
 
 python3.6执行文件和软链接在/usr/bin,库文件在/usr/lib。
 
-## 下载python3.7.3源码：
+## 下载python3.7.4源码：
 [*Download Python*](<https://www.python.org/downloads/>)
 
 ```bash
-wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
 # 或者
-curl -O https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
 ```
 
 解压：
 
 ```bash
-tar -xzvf Python-3.7.3.tgz
+tar -xzvf Python-3.7.4.tgz
 ```
 
 ## 安装开发者工具包
@@ -39,7 +39,7 @@ tar -xzvf Python-3.7.3.tgz
 # ubuntu:
 sudo apt-get install build-essential
 # cent os:
-sudo sudo yum groupinstall "Development tools"
+sudo yum groupinstall "Development tools"
 ```
 
 ## 安装依赖
