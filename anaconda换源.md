@@ -2,7 +2,7 @@
 
 [* 清华大学开源软件镜像站*](<https://mirrors.tuna.tsinghua.edu.cn/>)
 
-naconda 安装包可以到 <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/> 下载.
+anaconda 安装包可以到 <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/> 下载.
 
 ```shell
 vim ~/.condarc
