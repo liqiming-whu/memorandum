@@ -59,8 +59,11 @@ let g:closetag_html_style=1
 " let g:ale_echo_msg_error_str = 'Error'
 " let g:ale_echo_msg_warning_str = 'Warning'
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
+Plug 'neomake/neomake'
+let g:neomake_open_list = 2
 call plug#end()
+
+call neomake#configure#automake('nrwi', 500)
 
 filetype plugin indent on
 syntax enable
