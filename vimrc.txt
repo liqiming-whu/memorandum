@@ -81,7 +81,7 @@ let g:closetag_html_style=1
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 Plug 'neomake/neomake' " 静态检查
-" let g:neomake_open_list = 2  " 默认打开报表
+let g:neomake_open_list = 2  " 默认打开报表
 
 call plug#end()
 
