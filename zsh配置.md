@@ -38,27 +38,27 @@ make install -j4
 通过curl
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 或者通过wget
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 如果上述方法出现问题，可以按照下面的方法进行：
 
 ```bash
 cd
-git clone https://github.com/robbyrussell/oh-my-zsh.git
+git clone https://https://github.com/ohmyzsh/ohmyzsh
 mv oh-my-zsh .oh-my-zsh
-cp .oh-my-zsh/template/zshrc.zsh-template ~/.zshrc
+cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
 ## 配置oh-my-zsh
 
-vim .zshrc，切换ZSH_THEME，可以在[这里](<https://github.com/robbyrussell/oh-my-zsh/wiki/Themes>)预览。
+vim .zshrc，切换ZSH_THEME，可以在[这里](<https://github.com/ohmyzsh/ohmyzsh/wiki/Themes>)预览。
 
 想要隐藏用户名，```export DEFAULT_USER="<user-name>"```
 
