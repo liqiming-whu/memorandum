@@ -71,6 +71,12 @@ plugins=(
   git
   extract  # 一个命令 `x` 解压全部压缩文件
   z  # cd的加强版，到达任意到过的位置，模糊匹配
+  rand-quote  # 随机名言
+  gitignore  # 提供一条 gi 命令，用来查询 gitignore 模板 gi python > .gitignore
+  cp  # 提供一个 cpv 命令，这个命令使用 rsync 实现带进度条的复制功能
+  vi-mode  # vim输入模式
+  safe-paste  # 往 zsh 粘贴脚本时，它不会被立刻运行
+  colored-man-pages  # 给你带颜色的 man 命令
   zsh-syntax-highlighting  # 指令高亮
   zsh-autosuggestions  # 命令自动提示，方向键补全
 )
