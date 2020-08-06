@@ -50,7 +50,6 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 如果上述方法出现问题，可以按照下面的方法进行：
 
 ```bash
-cd
 git clone https://https://github.com/ohmyzsh/ohmyzsh
 mv oh-my-zsh .oh-my-zsh
 cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
@@ -118,34 +117,6 @@ drwxrwxrwx 1 venus venus 512 Mar 26 20:22 /home/venus/.oh-my-zsh/custom/plugins/
 ```bash
 chmod 755 ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 chmod 755 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
-
-### 使用powerline-theme主题(可选)
-
-#### 下载主题 oh-my-zsh-powerline-theme
-
-```bash
-git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme 
-```
-
-下载完后安装主题，执行目录下的脚本install.sh，此过程只是将主题powerline.zsh-theme放入~/.oh-my-zsh/themes/内
-
-#### 安装主题所需要的字体，否则会乱码
-
-```bash
-git clone https://github.com/powerline/fonts.git
-sudo ./fonts/install.sh
-```
-
-到此字体安装完成，之后在终端命令行工具的偏好设置设置:
-找到“文本->>字体->>更改” ，“所有字体”中选中“Meslo LG M for powerLine” 字体
-
-#### 设置oh my zsh 配置文件
-
-```bash
-vim  ~/.zshrc   # vim 编辑 zshrc 配置文件
-ZSH_THEME="robbyrussel"  # 修改此项为设置主题： ZSH_THEME="powerline"
-# 修改此项以更好的支持自己常用命令：plugins=(git autojump osx brew node npm)
 ```
 
 ### 自定义主题
@@ -226,12 +197,13 @@ PROMPT='${ret_status}%{$fg[magenta]%}%n@%{$fg[green]%}%m %{$fg[cyan]%}%c%{$reset
 ```bash
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT='${ret_status}%{$fg[magenta]%}%n@%{$fg[green]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ```
+
+### 主题文件已经保存在github,可下载使用
 
 下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
 
