@@ -1,15 +1,17 @@
 # vim配置
 
-* **ubuntu一键安装并配置：**
 
-推荐使用 [**legolas-vim**](<https://github.com/TTWShell/legolas-vim>) 感谢[*TTWShell*](<https://github.com/TTWShell>)
-
-或者 [**k-vim**](<https://github.com/wklken/k-vim>) 感谢[*wklken*](<https://github.com/wklken>)
-
-## 使用vim-plug管理vim插件,安装在~/.vim
+## 使用vim-plug管理vim插件,安装在~/.vim/autoload/
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+若网络无法连接
+```bash
+git clone https://github.com/junegunn/vim-plug
+mkdir -p ~/.vim/autoload
+cp vim-plug/plug.vim ~/.vim/autoload
 ```
 
 ## 重命名vimrc.txt为.vimrc于~/
@@ -29,10 +31,17 @@ cp vimrc.txt ~/.vimrc
 :PlugClean # 卸载插件，首先在.vimrc中删除
 :PlugUpgrade # 升级
 ```
+## 安装依赖
+```bash
+sudo apt install nodejs yarn
+sudo pip install flake8
+```
+
 ## 复制主题配色文件到colors文件夹下
 
 ```bash
-cp -r ~/.vim/plugged/gruvbox/colors ~/.vim/
+cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
+cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 ```
 ## 复制.vimrc和.vim至/root/
 

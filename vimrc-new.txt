@@ -78,12 +78,7 @@ let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-" Plug 'neomake/neomake' " 静态检查
-" let g:neomake_open_list = 2  " 默认打开报表
-
 call plug#end()
-
-" call neomake#configure#automake('nrwi', 500) " 默认开启静态检查
 
 filetype plugin indent on
 syntax enable
