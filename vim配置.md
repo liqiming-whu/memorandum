@@ -1,6 +1,5 @@
 # vim配置
 
-
 ## 使用vim-plug管理vim插件,安装在~/.vim/autoload/
 
 ```bash
@@ -8,6 +7,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 ```
 
 若网络无法连接
+
 ```bash
 git clone https://github.com/junegunn/vim-plug
 mkdir -p ~/.vim/autoload
@@ -18,8 +18,7 @@ cp vim-plug/plug.vim ~/.vim/autoload
 
 ```bash
 git clone https://github.com/liqiming-whu/memorandum
-cd memorandum
-cp vimrc.txt ~/.vimrc
+cp memorandum/vimrc.txt ~/.vimrc
 ```
 
 ## 安装插件
@@ -31,18 +30,38 @@ cp vimrc.txt ~/.vimrc
 :PlugClean # 卸载插件，首先在.vimrc中删除
 :PlugUpgrade # 升级
 ```
+
 ## 安装依赖
+
 ```bash
-sudo apt install nodejs yarn
+sudo apt install universal-ctags nodejs
 sudo pip install flake8
+
 ```
 
-## 复制主题配色文件到colors文件夹下
+## 安装yarn
 
 ```bash
+# archlinux:
+sudo pacman -S yarn
+# ubuntu:
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
+# 如果报错，执行以下命令后重新安装
+sudo apt remove cmdtest
+sudo apt remove gpg
+sudo apt install gnupg1
+```
+
+## 安装主题配色
+
+```bash
+mkdir ~/.vim/colors
 cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
 cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 ```
+
 ## 复制.vimrc和.vim至/root/
 
 ```bash

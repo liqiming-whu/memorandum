@@ -1,53 +1,56 @@
 " vim plug插件管理
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox' " 配色方案
-set background=dark
-colorscheme gruvbox
-"  需要复制/.vim/plugged/gruvbox/colors到~/.vim/
-set t_Co=256  " 开启256色支持
+Plug 'joshdick/onedark.vim' " 配色方案
+colorscheme onedark
+" 安装: cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
+" cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 
 Plug 'vim-airline/vim-airline' " 状态栏
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='onedark'
 
 Plug 'Yggdroot/indentLine' " 缩进标线
-let g:indentLine_noConcealCursor = 1
-let g:indentLine_color_term = 0
-let g:indentLine_char = '|'
+let g:indentLine_color_term = 239
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-Plug 'godlygeek/tabular' " 代码对齐：选中要对齐的行，执行 :Tab/:
-
-Plug 'scrooloose/nerdtree' " 文件管理器 F2
-" NERDTree config
-" open a NERDTree automatically when vim starts up
-" autocmd vimenter * NERDTree
-" open a NERDTree automatically when vim starts up if no files were specified
+Plug 'preservim/nerdtree' " 文件管理器 F2
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) &&
     \ !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" map F2 to open NERDTree
 map <F2> :NERDTreeToggle<CR>
-" close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
     \ b:NERDTree.isTabTree()) | q | endif
 " 上面我们设置了自动打开NERDTree，(直接输入vim会打开NERDTree)，打开一个目录也
 " 会打开NERDTree，当文件都关闭只有NERDTree时自动退出。
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
-" E190: Cannot open "/home/venus/.vim/view/~=+.vim=+view=+NERD_tree_2=" for writing
-" E190: Cannot open "/home/venus/.vim/view/~=+NERD_tree_1=" for writing 等等
-" 没有权限。解决办法：
-" 更改目录权限： sudo chmod 777 /home/venus/.vim/view/
-" 更改用户和用户组： sudo chown venus /home/venus/.vim/view/
-" \ sudo chgrp venus /home/venus/.vim/view/
+" WSL ubuntu 18.04出现:
+" E190: Cannot open "/home/xxx/.vim/view/~=+.vim=+view=+NERD_tree_2=" for writing
+" E190: Cannot open "/home/xxx/.vim/view/~=+NERD_tree_1=" for writing 等等
+" 没有权限。解决办法:
+" 更改目录权限： sudo chmod 777 /home/xxx/.vim/view/
+" 更改用户和用户组: sudo chown venus /home/xxx/.vim/view/
+" \ sudo chgrp venus /home/xxx/.vim/view/
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 需要安装universal-ctags
+noremap <F3> :LeaderfFunction!<CR>
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_WindowPosition = 'popup' " vim >=8.1
+let g:Lf_WindowPosition = 'popup' " vim >=8.1
+let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
 
-Plug 'majutsushi/tagbar'  " 代码提纲，F3, 集群不可用
-let g:tagbar_width=30
-let g:tagbar_autofocus=1  " 需要安装ctags，推荐
-" universal-ctags：https://github.com/universal-ctags/ctags
-let g:tagbar_right = 1
-nmap <F3> :TagbarToggle<CR>
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件
+let g:coc_global_extensions = ['coc-json','coc-tsserver',
+    \ 'coc-html','coc-clangd','coc-cmake','coc-css',
+    \ 'coc-java','coc-python','coc-snippets','coc-xml',
+    \ 'coc-yaml','coc-markdownlint','coc-highlight']
+" :CocInstall coc-json coc-css 安装插件
+" :CocUninstall coc-css 卸载插件
+" :CocList extensions 插件列表
 
 Plug 'hrp/EnhancedCommentify' " 注释，快捷键<leader>x, <leader>c
 let g:EnhCommentifyRespectIndent = 'Yes'
@@ -56,36 +59,26 @@ let g:EnhCommentifyPretty = 'Yes'
 Plug 'luochen1990/rainbow' " 彩虹括号
 let g:rainbow_active = 1
 
-Plug 'justinmk/vim-syntax-extra' " 语法高亮
-
-Plug 'hdima/python-syntax' " python 高亮增强
-let python_highlight_all = 1
-
 Plug 'Raimondi/delimitMate' " 补全括号
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签
 let g:closetag_html_style=1
 
-" Plug 'w0rp/ale' " 代码检测 集群不可用
+Plug 'dense-analysis/ale' " 代码检测 集群不可用
 " 需要代码检测工具的支持：pip install flake8
-" let &runtimepath.=',~/.vim/plugged/ale'
-" let g:ale_sign_column_always = 0 " 一般需要实时检查，默认关闭
-" let g:ale_lint_on_save = 1 " save file auto check
-" let g:ale_lint_on_text_changed = 0 " for ale_lint_on_save = 1
-" let g:ale_lint_on_enter = 0 " for ale_lint_on_save = 1
-" map <F5> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
+let &runtimepath.=',~/.vim/plugged/ale'
+let g:ale_sign_column_always = 0 " 一般需要实时检查，默认关闭
+let g:ale_lint_on_save = 1 " save file auto check
+let g:ale_lint_on_text_changed = 0 " for ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0 " for ale_lint_on_save = 1
+map <F5> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
 " F5开启/关闭静态检测
-" let g:ale_echo_msg_error_str = 'Error'
-" let g:ale_echo_msg_warning_str = 'Warning'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-Plug 'neomake/neomake' " 静态检查
-let g:neomake_open_list = 2  " 默认打开报表
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 call plug#end()
-
-call neomake#configure#automake('nrwi', 500) " 默认开启静态检查
 
 filetype plugin indent on
 syntax enable
