@@ -62,9 +62,10 @@ cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
 cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 ```
 
-## 复制.vimrc和.vim至/root/
+## 复制.vimrc,.vim,.config至/root
 
 ```bash
-sudo cp ~/.vimrc  /root/
-sudo cp -r ~/.vim  /root/
+sudo cp ~/.vimrc  /root
+sudo cp -r ~/.vim  /root
+sudo cp -r ~/.config  /root
 ```
