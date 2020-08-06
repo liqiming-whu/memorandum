@@ -50,8 +50,9 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 如果上述方法出现问题，可以按照下面的方法进行：
 
 ```bash
+cd ~
 git clone https://https://github.com/ohmyzsh/ohmyzsh
-mv oh-my-zsh .oh-my-zsh
+mv ohmyzsh .oh-my-zsh
 cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
@@ -203,12 +204,13 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ```
 
-### 主题文件已经保存在github,可下载使用
+### 修改后的主题文件已经保存在github,可下载使用
 
 下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
 
 ```bash
-cp mytheme.zsh-theme.txt ~/.oh-my-zsh/themes/mytheme.zsh-theme
+git clone https://github.com/liqiming-whu/memorandum
+cp memorandum/mytheme.zsh-theme.txt ~/.oh-my-zsh/themes/mytheme.zsh-theme
 vim ~/.zshrc
 source ~/.zshrc
 ```
