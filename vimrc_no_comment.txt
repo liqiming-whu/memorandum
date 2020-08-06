@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 set background=dark
-colorscheme gruvbox
+colorscheme one
 set t_Co=256
 
 Plug 'vim-airline/vim-airline'
@@ -12,9 +12,7 @@ let g:indentLine_noConcealCursor = 1
 let g:indentLine_color_term = 0
 let g:indentLine_char = '|'
 
-Plug 'godlygeek/tabular'
-
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree/'
 " autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -25,11 +23,6 @@ map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
     \ b:NERDTree.isTabTree()) | q | endif
 
-" Plug 'majutsushi/tagbar'
-" let g:tagbar_width=30
-" let g:tagbar_autofocus=1
-" let g:tagbar_right = 1
-" nmap <F3> :TagbarToggle<CR>
 
 Plug 'hrp/EnhancedCommentify'
 let g:EnhCommentifyRespectIndent = 'Yes'
@@ -38,27 +31,12 @@ let g:EnhCommentifyPretty = 'Yes'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-Plug 'justinmk/vim-syntax-extra'
-
-Plug 'hdima/python-syntax'
-let python_highlight_all = 1
-
 Plug 'Raimondi/delimitMate'
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 Plug 'docunext/closetag.vim'
 let g:closetag_html_style=1
 
-" Plug 'w0rp/ale'
-" let &runtimepath.=',~/.vim/plugged/ale'
-" let g:ale_sign_column_always = 0
-" let g:ale_lint_on_save = 1
-" let g:ale_lint_on_text_changed = 0
-" let g:ale_lint_on_enter = 0
-" map <F5> :ALEToggle \| echo 'g:ale_enabled =' g:ale_enabled<CR>
-" let g:ale_echo_msg_error_str = 'Error'
-" let g:ale_echo_msg_warning_str = 'Warning'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 Plug 'neomake/neomake'
 let g:neomake_open_list = 2
 call plug#end()
