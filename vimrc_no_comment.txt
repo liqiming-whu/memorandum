@@ -1,16 +1,18 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'rakr/vim-one'
-set background=dark
-colorscheme one
-set t_Co=256
+Plug 'joshdick/onedark.vim'
+colorscheme onedark
+" mkdir ~/.vim/colors
+" cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
+" cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='onedark'
 
 Plug 'Yggdroot/indentLine'
-let g:indentLine_noConcealCursor = 1
-let g:indentLine_color_term = 0
-let g:indentLine_char = '|'
+let g:indentLine_color_term = 239
+let g:indentLine_char_list = ['|', '¦', '┆ ', '┊ ']
 
 Plug 'preservim/nerdtree/'
 " autocmd vimenter * NERDTree
@@ -22,7 +24,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) &&
 map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
     \ b:NERDTree.isTabTree()) | q | endif
-
 
 Plug 'hrp/EnhancedCommentify'
 let g:EnhCommentifyRespectIndent = 'Yes'
@@ -37,11 +38,7 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 Plug 'docunext/closetag.vim'
 let g:closetag_html_style=1
 
-Plug 'neomake/neomake'
-let g:neomake_open_list = 2
 call plug#end()
-
-call neomake#configure#automake('nrwi', 500)
 
 filetype plugin indent on
 syntax enable
@@ -68,13 +65,9 @@ set viewoptions=cursor
 au BufWinLeave ?* mkview
 au VimEnter ?* silent loadview
 
-set fileencodings=utf-8,ucs-bom,gbk,gb2312,big5,latin1
+set fileencodings=utf-8
 
-if has("win32")
-    set fileformats=dos,unix,mac
-else
-    set fileformats=unix,mac,dos
-endif
+set fileformats=unix,mac,dos
 
 set formatoptions+=mM
 
@@ -116,7 +109,7 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches() " for performance
+autocmd BufWinLeave * call clearmatches()
 
 set ignorecase
 set smartcase

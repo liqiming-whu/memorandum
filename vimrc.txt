@@ -3,7 +3,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'joshdick/onedark.vim' " 配色方案
 colorscheme onedark
-" 安装: cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
+" 安装:
+" mkdir ~/.vim/colors
+" cp ~/.vim/plugged/onedark.vim/colors/onedark.vim ~/.vim/colors
 " cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 
 Plug 'vim-airline/vim-airline' " 状态栏
@@ -15,6 +17,7 @@ let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 Plug 'preservim/nerdtree' " 文件管理器 F2
+" autocmd vimenter * NERDTree "  打开文件自动打开HERDTree,建议关闭
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
@@ -43,7 +46,7 @@ let g:Lf_WindowPosition = 'popup' " vim >=8.1
 let g:Lf_WindowPosition = 'popup' " vim >=8.1
 let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件 vim > 8.1
 let g:coc_global_extensions = ['coc-json','coc-tsserver',
     \ 'coc-html','coc-clangd','coc-cmake','coc-css',
     \ 'coc-java','coc-python','coc-snippets','coc-xml',
@@ -65,7 +68,7 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 Plug 'docunext/closetag.vim' " 补全 HTML/XML 标签
 let g:closetag_html_style=1
 
-Plug 'dense-analysis/ale' " 代码检测 集群不可用
+Plug 'dense-analysis/ale' " 代码检测 vim > 8.0
 " 需要代码检测工具的支持：pip install flake8
 let &runtimepath.=',~/.vim/plugged/ale'
 let g:ale_sign_column_always = 0 " 一般需要实时检查，默认关闭
@@ -116,7 +119,7 @@ au BufWinLeave ?* mkview
 au VimEnter ?* silent loadview
 
 " 检测文件编码时，优先考虑 UTF-8
-set fileencodings=utf-8,ucs-bom,gbk,gb2312,big5,latin1
+set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,big5,latin1
 
 " 不同平台，设置不同的行尾符，即 EOL
 " 注意：在 Mac 平台，也是 unix 优先；自 OS X 始，行尾符与 Unix 一致，
@@ -165,7 +168,7 @@ au FileType text,markdown,html,xml set wrap
 " 折行时，以单词为界，以免切断单词
 set linebreak
 " 折行后的后续行，使用与第一行相同的缩进
-set breakindent  " 集群不可用
+set breakindent  " vim > 8.0
 
 " 即使在终端，也尽量启用鼠标(设置此项后WSL不能右键粘贴，所以注释掉了）
 " if has("mouse") | set mouse=a | endif
@@ -197,9 +200,6 @@ set cursorcolumn  " 光标竖线
 
 " 高亮不想要的空格，比如行尾
 " See [http://vim.wikia.com/wiki/Highlight_unwanted_spaces]
-" - highlight trailing whitespace in red
-" - have this highlighting not appear whilst you are typing in insert mode
-" - have the highlighting of whitespace apply when you open new buffers
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
