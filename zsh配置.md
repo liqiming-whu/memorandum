@@ -51,7 +51,7 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 ```bash
 cd ~
-git clone https://https://github.com/ohmyzsh/ohmyzsh
+git clone https://github.com/ohmyzsh/ohmyzsh
 mv ohmyzsh .oh-my-zsh
 cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
