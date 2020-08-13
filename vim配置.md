@@ -34,7 +34,7 @@ cp memorandum/vimrc.txt ~/.vimrc
 ## 安装依赖
 
 ```bash
-sudo apt install universal-ctags nodejs
+sudo apt install universal-ctags nodejs clangd
 sudo pip install flake8
 
 ```
