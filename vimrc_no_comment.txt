@@ -118,3 +118,5 @@ set hlsearch
 map <silent> <leader><CR> :nohlsearch<CR>
 
 set gdefault
+
+set pastetoggle=<F7>
