@@ -40,10 +40,9 @@ let g:Lf_WindowPosition = 'popup' " vim >=8.1
 let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件 vim > 8.1
-let g:coc_global_extensions = ['coc-json','coc-tsserver',
-    \ 'coc-html','coc-clangd','coc-cmake','coc-css',
-    \ 'coc-java','coc-python','coc-snippets','coc-xml',
-    \ 'coc-yaml','coc-markdownlint','coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake',
+    \ 'coc-css', 'coc-java', 'coc-python', 'coc-snippets', 'coc-xml',
+    \ 'coc-markdownlint','coc-highlight']
 " :CocInstall coc-json coc-css 安装插件
 " :CocUninstall coc-css 卸载插件
 " :CocList extensions 插件列表
