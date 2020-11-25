@@ -51,7 +51,9 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 ```bash
 cd ~
-git clone https://github.com/ohmyzsh/ohmyzsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git
+# 或
+git clone https://gitee.com/lu_x/ohmyzsh.git
 mv ohmyzsh .oh-my-zsh
 cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
@@ -87,8 +89,12 @@ plugins=(
 ```bash
 # 下载zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# 或
+git clone https://gitee.com/gulei666/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # 下载zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# 或
+git clone https://gitee.com/githubClone/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 如果出现：
