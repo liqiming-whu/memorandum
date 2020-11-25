@@ -97,35 +97,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.
 git clone https://gitee.com/githubClone/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-如果出现：
-
-```bash
-[oh-my-zsh] Insecure completion-dependent directories detected:
-drwxrwxrwx 1 venus venus 512 Mar 26 20:22 /home/venus/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-drwxrwxrwx 1 venus venus 512 Mar 26 20:22 /home/venus/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-[oh-my-zsh] For safety, we will not load completions from these directories until
-[oh-my-zsh] you fix their permissions and ownership and restart zsh.
-[oh-my-zsh] See the above list for directories with group or other writability.
-
-[oh-my-zsh] To fix your permissions you can do so by disabling
-[oh-my-zsh] the write permission of "group" and "others" and making sure that the
-[oh-my-zsh] owner of these directories is either root or your current user.
-[oh-my-zsh] The following command may help:
-[oh-my-zsh]     compaudit | xargs chmod g-w,o-w
-
-[oh-my-zsh] If the above didn't help or you want to skip the verification of
-[oh-my-zsh] insecure directories you can set the variable ZSH_DISABLE_COMPFIX to
-[oh-my-zsh] "true" before oh-my-zsh is sourced in your zshrc file.
-```
-
-按照提示，修改权限：
-
-```bash
-chmod 755 ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-chmod 755 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
-
 ### 自定义主题
 
 默认的主题robbyrussel不显示用户名，自定义主题可以修改使其显示用户名
@@ -210,7 +181,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ```
 
-### 修改后的主题文件已经保存在github,可下载使用
+### 修改后的主题文件已经保存在github,可直接下载使用
 
 下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
 
