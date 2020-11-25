@@ -10,6 +10,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 ```bash
 git clone https://github.com/junegunn/vim-plug
+# 或
+git clone https://gitee.com/chenxinliang123/vim-plug
 mkdir -p ~/.vim/autoload
 cp vim-plug/plug.vim ~/.vim/autoload
 ```
