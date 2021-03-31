@@ -1,6 +1,6 @@
-# zsh安装与配置
+## 大幅度提升终端使用体验——zsh安装与配置
 
-## 安装zsh
+### 1.安装zsh
 
 ```bash
 sudo apt install zsh  # 以ubuntu为例
@@ -21,7 +21,7 @@ make check
 make install -j4
 ```
 
-### 将zsh设置为默认shell
+### 2.将zsh设置为默认shell
 
 如果使用root权限安装的zsh，直接终端运行```chsh -s $(which zsh)```即可。
 
@@ -33,7 +33,7 @@ make install -j4
 
 如果上述两种方法都不能修改默认shell，安装 oh-my-zsh，安装时会自动切换shell成zsh。
 
-## 安装oh-my-zsh
+### 3.安装oh-my-zsh
 
 通过curl
 
@@ -58,13 +58,13 @@ mv ohmyzsh .oh-my-zsh
 cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
-## 配置oh-my-zsh
+### 4.配置oh-my-zsh
 
 vim .zshrc，切换ZSH_THEME，可以在[这里](<https://github.com/ohmyzsh/ohmyzsh/wiki/Themes>)预览。
 
 想要隐藏用户名，```export DEFAULT_USER="<user-name>"```
 
-### 插件配置
+### 5.插件配置
 
 在.zshrc中找到plugins=(git)，其中加入以下插件：
 
@@ -97,7 +97,24 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.
 git clone https://gitee.com/githubClone/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-### 自定义主题
+### 6.主题配置
+
+修改后的主题文件已经保存在github仓库,可直接下载使用：
+
+下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
+
+```bash
+git clone https://github.com/liqiming-whu/memorandum
+# 或
+git clone https://gitee.com/liqiming_whu/memorandum
+cp memorandum/mytheme.zsh-theme.txt ~/.oh-my-zsh/themes/mytheme.zsh-theme
+vim ~/.zshrc
+source ~/.zshrc
+```
+
+当然你也可以自行配置主题，以下是我自己的配置过程：
+
+### 7.自定义主题
 
 默认的主题robbyrussel不显示用户名，自定义主题可以修改使其显示用户名
 
@@ -162,15 +179,15 @@ PROMPT='%{$fg_bold[red]%}-> %{$fg_bold[magenta]%}%n%{$fg_bold[cyan]%}@%{$fg[gree
 %n 登录名
 ```
 
-### mytheme.zsh-theme
+#### 修改mytheme.zsh-theme文件
 
-修改：
+修改这一行：
 
 ```bash
 PROMPT='${ret_status}%{$fg[magenta]%}%n@%{$fg[green]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 ```
 
-全文：
+文件全部内容：
 
 ```bash
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
@@ -181,18 +198,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ```
 
-### 修改后的主题文件已经保存在github,可直接下载使用
-
-下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
-
-```bash
-git clone https://github.com/liqiming-whu/memorandum
-cp memorandum/mytheme.zsh-theme.txt ~/.oh-my-zsh/themes/mytheme.zsh-theme
-vim ~/.zshrc
-source ~/.zshrc
-```
-
-### 随机主题
+### 8.随机主题
 
 在 ```~/.zshrc``` 文件中设置主题为 ```random``` 即可开启随机主题
 
@@ -201,3 +207,6 @@ ZSH_THEME="random"
 ```
 
 每次打开新的终端的时候，zsh 都会随机使用一个主题
+
+
+
