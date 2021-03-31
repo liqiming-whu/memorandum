@@ -1,20 +1,26 @@
-# 配置你的vim，让它成为能用的编辑器
+---
 
+## 配置你的vim，让它成为能用的编辑器
 
+---
+
+<!--more-->
 
 ## 学习Linux，从vim配置开始：
 
 ~~不会真有人不配置就用vim吧，不会吧~~
 
+---
+
 ### 1.使用vim-plug管理vim插件
 
-把vim-plug安装在~/.vim/autoload/
+* 把vim-plug安装在~/.vim/autoload/
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-由于github处于骑墙状态有时候没法连接，所以：
+* 由于github处于骑墙状态有时候没法连接，所以：
 
 ```bash
 git clone https://github.com/junegunn/vim-plug
@@ -26,7 +32,7 @@ cp vim-plug/plug.vim ~/.vim/autoload
 
 ### 2.重命名vimrc.txt为.vimrc于~/
 
-这里需要clone我的配置：
+* 这里可以clone我的配置：
 
 ```bash
 git clone https://github.com/liqiming-whu/memorandum
@@ -54,7 +60,7 @@ sudo pip install flake8
 
 ### 5.安装yarn
 
-去yarn官网查看[安装说明](https://yarn.bootcss.com/docs/install/#debian-stable)
+* 去yarn官网查看[安装说明](https://yarn.bootcss.com/docs/install/#debian-stable)
 
 ```bash
 # archlinux:
@@ -71,7 +77,7 @@ sudo apt install gnupg1
 
 ### 6.安装主题配色
 
-我们要把主题配色复制到指定位置才能生效。
+* 我们要把主题配色复制到指定位置才能生效。
 
 ```bash
 mkdir ~/.vim/colors
@@ -81,7 +87,7 @@ cp ~/.vim/plugged/onedark.vim/autoload/onedark.vim ~/.vim/autoload
 
 ### 7.复制.vimrc, .vim, .config至/root
 
-为了让root也可以使用vim配置，直接粗暴的复制过去就完了。
+* 为了让root也可以使用vim配置，直接粗暴的复制过去就完了。
 
 ```bash
 sudo cp ~/.vimrc  /root
@@ -91,7 +97,7 @@ sudo cp -r ~/.config  /root
 
 ### 8.我的.vimrc文件
 
-需要vim > 8.0才能用
+* 需要vim > 8.0才能用
 
 ```bash
 " vim plug插件管理
@@ -309,7 +315,7 @@ set gdefault
 set pastetoggle=<F7>
 ```
 
-宁外有vim7可用的无中文注释版本，软件版本比较旧的服务器可用
+* 另有vim7可用的无中文注释版本，软件版本比较旧的服务器可用
 
 ```bash
 call plug#begin('~/.vim/plugged')
@@ -439,3 +445,4 @@ set pastetoggle=<F7>
 
 ```
 
+## 

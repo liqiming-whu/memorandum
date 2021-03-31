@@ -1,4 +1,8 @@
+---
+
 ## 大幅度提升终端使用体验——zsh安装与配置
+
+---
 
 ### 1.安装zsh
 
@@ -8,46 +12,51 @@ sudo apt install zsh  # 以ubuntu为例
 
 或者[通过源码安装](<http://zsh.sourceforge.net/Arc/source.html>)
 
-如果没有root权限，通过源码安装，下载解压之后：
+* 如果没有root权限，通过源码安装，下载解压之后：
 
-```bash
-# 首先配置zsh，自定义安装路径
-./configure --prefix=$HOME/.local
-# 然后编译
-make -j4
-# 检查编译是否成功（可选）
-make check
-# 如果没有编译错误，则安装zsh
-make install -j4
-```
+* 首先配置zsh，自定义安装路径
+
+> ./configure --prefix=$HOME/.local  
+
+* 然后编译
+
+>  make -j4
+
+* 检查编译是否成功
+
+> make check
+
+* 如果没有编译错误，则安装zsh
+
+> make install -j4
 
 ### 2.将zsh设置为默认shell
 
-如果使用root权限安装的zsh，直接终端运行```chsh -s $(which zsh)```即可。
+* 如果使用root权限安装的zsh，直接终端运行```chsh -s $(which zsh)```即可。
 
-如果没有root权限，通过源码安装zsh的话，则解决方法是在每次打开终端时执行```exec <zsh-path>```来替代当前的shell。在文件```.bash_profile```中加入：
+* 如果没有root权限，通过源码安装zsh的话，则解决方法是在每次打开终端时执行```exec <zsh-path>```来替代当前的shell。在文件```.bash_profile```中加入：
 
-```bash
-[ -f $HOME/.local/bin/zsh ] && exec $HOME/.local/bin/zsh -l
-```
+> [ -f $HOME/.local/bin/zsh ] && exec $HOME/.local/bin/zsh -l
 
-如果上述两种方法都不能修改默认shell，安装 oh-my-zsh，安装时会自动切换shell成zsh。
+* 如果上述两种方法都不能修改默认shell，安装 oh-my-zsh，安装时会自动切换shell成zsh。
 
 ### 3.安装oh-my-zsh
 
-通过curl
+* ArchLinux用户直接```yay -S oh-my-zsh```就完了。
+
+* 通过curl
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-或者通过wget
+* 或者通过wget
 
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-如果上述方法出现问题，可以按照下面的方法进行：
+* 如果上述方法出现问题，可以按照下面的方法进行：
 
 ```bash
 cd ~
@@ -60,13 +69,13 @@ cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 ### 4.配置oh-my-zsh
 
-vim .zshrc，切换ZSH_THEME，可以在[这里](<https://github.com/ohmyzsh/ohmyzsh/wiki/Themes>)预览。
+* vim .zshrc，切换ZSH_THEME，可以在[这里](<https://github.com/ohmyzsh/ohmyzsh/wiki/Themes>)预览。
 
-想要隐藏用户名，```export DEFAULT_USER="<user-name>"```
+* 想要隐藏用户名，```export DEFAULT_USER="<user-name>"```
 
 ### 5.插件配置
 
-在.zshrc中找到plugins=(git)，其中加入以下插件：
+* 在.zshrc中找到plugins=(git)，其中加入以下插件：
 
 ```bash
 plugins=(
@@ -84,7 +93,7 @@ plugins=(
 )
 ```
 
-其中插件zsh-syntax-highlighting和zsh-autosuggestions需要单独下载，方法如下：
+* 其中插件zsh-syntax-highlighting和zsh-autosuggestions需要单独下载，方法如下：
 
 ```bash
 # 下载zsh-syntax-highlighting
@@ -99,9 +108,9 @@ git clone https://gitee.com/githubClone/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/
 
 ### 6.主题配置
 
-修改后的主题文件已经保存在github仓库,可直接下载使用：
+* 修改后的主题文件已经保存在github仓库,可直接下载使用：
 
-下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
+* 下载```mytheme.zsh-theme.txt```，重命名```mytheme.zsh-theme```于```~/.oh-my-zsh/themes```，在```~/.zshrc```中声明```ZSH_THEME="mytheme"```,然后```source ~/.zshrc```
 
 ```bash
 git clone https://github.com/liqiming-whu/memorandum
@@ -112,20 +121,20 @@ vim ~/.zshrc
 source ~/.zshrc
 ```
 
-当然你也可以自行配置主题，以下是我自己的配置过程：
+* 当然你也可以自行配置主题，以下是我自己的配置过程：
 
 ### 7.自定义主题
 
-默认的主题robbyrussel不显示用户名，自定义主题可以修改使其显示用户名
+* 默认的主题robbyrussel不显示用户名，自定义主题可以修改使其显示用户名
 
-终端输入：
+* 终端输入：
 
 ```bash
 cd ~/.oh-my-zsh/themes
 vim robbyrussell.zsh-theme
 ```
 
-可以看到：
+* 可以看到：
 
 ```bash
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
@@ -137,14 +146,14 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ```
 
-PROMPT就是设置显示的用户名
-由于oh_my_zsh时常会有版本更新，为了避免我们修改的跟更新的版本有冲突，建议不要修改robbyrussell.zsh-theme，而是将其拷贝出来，命名为自己的主题文件，比如叫做mytheme.zsh-theme，然后只对mytheme-theme进行修改。
+* PROMPT就是设置显示的用户名
+  由于oh_my_zsh时常会有版本更新，为了避免我们修改的跟更新的版本有冲突，建议不要修改robbyrussell.zsh-theme，而是将其拷贝出来，命名为自己的主题文件，比如叫做mytheme.zsh-theme，然后只对mytheme-theme进行修改。
 
 ```bash
 cp robbyrussell.zsh-theme mytheme.zsh-theme
 ```
 
-修改后将 ~/.zshrc 中的```ZSH_THEME="robbyrussell"```改为```ZSH_THEME="mytheme"```
+* 修改后将 ~/.zshrc 中的```ZSH_THEME="robbyrussell"```改为```ZSH_THEME="mytheme"```
 
 #### 参考设置
 
@@ -181,11 +190,9 @@ PROMPT='%{$fg_bold[red]%}-> %{$fg_bold[magenta]%}%n%{$fg_bold[cyan]%}@%{$fg[gree
 
 #### 修改mytheme.zsh-theme文件
 
-修改这一行：
+* 修改这一行：
 
-```bash
-PROMPT='${ret_status}%{$fg[magenta]%}%n@%{$fg[green]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-```
+> PROMPT='${ret_status}%{$fg[magenta]%}%n@%{$fg[green]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
 文件全部内容：
 
@@ -200,13 +207,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 ### 8.随机主题
 
-在 ```~/.zshrc``` 文件中设置主题为 ```random``` 即可开启随机主题
+* 在 ```~/.zshrc``` 文件中设置主题为 ```random``` 即可开启随机主题，每次打开新的终端的时候，zsh 都会随机使用一个主题。
 
-```bash
-ZSH_THEME="random"
-```
-
-每次打开新的终端的时候，zsh 都会随机使用一个主题
+> ZSH_THEME="random"
 
 
 
