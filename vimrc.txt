@@ -12,9 +12,9 @@ Plug 'vim-airline/vim-airline' " 状态栏
 Plug 'vim-airline/vim-airline-themes' " 状态栏主题
 let g:airline_theme='onedark'
 
-Plug 'Yggdroot/indentLine' " 缩进标线
-let g:indentLine_color_term = 239
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" Plug 'Yggdroot/indentLine' " 缩进标线,开启后不方便复制
+" let g:indentLine_color_term = 239
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 Plug 'preservim/nerdtree' " 文件管理器 F2
 " autocmd vimenter * NERDTree " 打开文件自动打开HERDTree,建议关闭
@@ -110,8 +110,9 @@ au BufWinLeave ?* mkview
 au VimEnter ?* silent loadview
 
 " 检测文件编码时，优先考虑 UTF-8
-set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,big5,latin1
-
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,big5,latin1
+set enc=utf8
+set fencs=utf8,gbk,gb2312,gb18030
 " 不同平台，设置不同的行尾符，即 EOL
 " 注意：在 Mac 平台，也是 unix 优先；自 OS X 始，行尾符与 Unix 一致，
 "      都是 `\n` 而不是 `\r`

@@ -10,9 +10,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='onedark'
 
-Plug 'Yggdroot/indentLine'
-let g:indentLine_color_term = 239
-let g:indentLine_char_list = ['|', '¦', '┆ ', '┊ ']
+" Plug 'Yggdroot/indentLine'
+" let g:indentLine_color_term = 239
+" let g:indentLine_char_list = ['|', '¦', '┆ ', '┊ ']
 
 Plug 'preservim/nerdtree/'
 " autocmd vimenter * NERDTree
@@ -66,6 +66,8 @@ au BufWinLeave ?* mkview
 au VimEnter ?* silent loadview
 
 set fileencodings=utf-8
+set enc=utf8
+set fencs=utf8
 
 set fileformats=unix,mac,dos
 
