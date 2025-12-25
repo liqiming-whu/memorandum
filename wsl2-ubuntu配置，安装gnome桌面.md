@@ -108,7 +108,7 @@ sudo systemctl start xrdp
 sudo systemctl enable xrdp
 ```
 
-## 连接rdp
+## 8.连接rdp
 
 打开远程桌面连接输入
 ```
