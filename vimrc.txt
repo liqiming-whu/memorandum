@@ -111,7 +111,7 @@ au VimEnter ?* silent loadview
 
 " 检测文件编码时，优先考虑 UTF-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,big5,latin1
-set enc=utf8
+set encoding=utf8
 set fencs=utf8,gbk,gb2312,gb18030
 " 不同平台，设置不同的行尾符，即 EOL
 " 注意：在 Mac 平台，也是 unix 优先；自 OS X 始，行尾符与 Unix 一致，
@@ -211,3 +211,25 @@ set gdefault
 
 " 设置粘贴模式快捷建
 set pastetoggle=<F7>
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+

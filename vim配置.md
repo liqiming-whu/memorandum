@@ -5,8 +5,6 @@
 
 ## 学习Linux，从vim配置开始：
 
-~~不会真有人不配置就用vim吧，不会吧~~
-
 ---
 
 ### 1.使用vim-plug管理vim插件
@@ -128,15 +126,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " 上面我们设置了自动打开NERDTree，(直接输入vim会打开NERDTree)，打开一个目录也
 " 会打开NERDTree，当文件都关闭只有NERDTree时自动退出。
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 需要安装universal-ctags
-noremap <F3> :LeaderfFunction!<CR>
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-let g:Lf_WindowPosition = 'popup' " vim >=8.1
-let g:Lf_WindowPosition = 'popup' " vim >=8.1
-let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
+" Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 需要安装universal-ctags
+" noremap <F3> :LeaderfFunction!<CR>
+" let g:Lf_HideHelp = 1
+" let g:Lf_UseCache = 0
+" let g:Lf_UseVersionControlTool = 0
+" let g:Lf_IgnoreCurrentBufferName = 1
+" let g:Lf_WindowPosition = 'popup' " vim >=8.1
+" let g:Lf_WindowPosition = 'popup' " vim >=8.1
+" let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件 vim > 8.1
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake',
@@ -210,7 +208,7 @@ au VimEnter ?* silent loadview
 
 " 检测文件编码时，优先考虑 UTF-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,big5,latin1
-set enc=utf8
+set encoding=utf8
 set fencs=utf8,gbk,gb2312,gb18030
 " 不同平台，设置不同的行尾符，即 EOL
 " 注意：在 Mac 平台，也是 unix 优先；自 OS X 始，行尾符与 Unix 一致，
@@ -310,6 +308,28 @@ set gdefault
 
 " 设置粘贴模式快捷建
 set pastetoggle=<F7>
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 ```
 
 * 另有vim7可用的无中文注释版本，软件版本比较旧的服务器可用

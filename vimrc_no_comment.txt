@@ -66,7 +66,7 @@ au BufWinLeave ?* mkview
 au VimEnter ?* silent loadview
 
 set fileencodings=utf-8
-set enc=utf8
+set encoding=utf8
 set fencs=utf8
 
 set fileformats=unix,mac,dos
