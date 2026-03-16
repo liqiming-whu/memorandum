@@ -29,15 +29,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 " 上面我们设置了自动打开NERDTree，(直接输入vim会打开NERDTree)，打开一个目录也
 " 会打开NERDTree，当文件都关闭只有NERDTree时自动退出。
 " 设置快捷键F2来自由切换打开或者关闭NERDTree。
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 需要安装universal-ctags
-noremap <F3> :LeaderfFunction!<CR>
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-let g:Lf_WindowPosition = 'popup' " vim >=8.1
-let g:Lf_WindowPosition = 'popup' " vim >=8.1
-let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
+" Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 需要安装universal-ctags
+" noremap <F3> :LeaderfFunction!<CR>
+" let g:Lf_HideHelp = 1
+" let g:Lf_UseCache = 0
+" let g:Lf_UseVersionControlTool = 0
+" let g:Lf_IgnoreCurrentBufferName = 1
+" let g:Lf_WindowPosition = 'popup' " vim >=8.1
+" let g:Lf_WindowPosition = 'popup' " vim >=8.1
+" let g:Lf_PreviewResult = {'Function':0, 'BufTag': 0}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " 补全插件 vim > 8.1
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake',

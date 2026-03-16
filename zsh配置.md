@@ -86,13 +86,13 @@ plugins=(
   safe-paste  # 往 zsh 粘贴脚本时，它不会被立刻运行
   colored-man-pages  # 给你带颜色的 man 命令
   zsh-syntax-highlighting  # 指令高亮
-  zsh-autosuggestions  # 命令自动提示，方向键补全
+  # zsh-autosuggestions  # 命令自动提示，方向键补全(有bug)
 )
 ```
 
 * 其中插件zsh-syntax-highlighting和zsh-autosuggestions需要单独下载，方法如下：
 
-```bash
+```bashs
 # 下载zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # 或
